@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MJ Essentials Digital Store | Mona Jackson-Ham</title>
+<meta name="description" content="The official digital store of Mona Jackson-Ham: books, guides, and tools created to help you grow in faith, business, and purpose.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0010'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%23f5c842' font-family='Georgia'>M</text></svg>">
+<style>
+  :root {
+    --bg: #0a0010;
+    --bg2: #14061f;
+    --card: #1a0b2e;
+    --purple: #7b2fff;
+    --violet: #b06aff;
+    --pink: #e040fb;
+    --gold: #f5c842;
+    --text: #e8e2f2;
+    --muted: #b8a8d4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: radial-gradient(1200px 600px at 80% -10%, rgba(123,47,255,.25), transparent 60%),
+                radial-gradient(900px 500px at 0% 110%, rgba(224,64,251,.12), transparent 55%),
+                var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 28px 0 8px; }
+  .brandbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo-mark {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+    display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif; font-size: 24px; color: var(--gold); font-weight: bold;
+    box-shadow: 0 0 24px rgba(123,47,255,.5);
+  }
+  .logo-name { font-size: 17px; font-weight: 700; letter-spacing: .5px; }
+  .logo-name span { color: var(--gold); }
+  .toplink { color: var(--muted); font-size: 14px; text-decoration: none; border-bottom: 1px solid rgba(176,106,255,.4); padding-bottom: 2px; transition: color .2s; }
+  .toplink:hover { color: var(--gold); }
+
+  .hero { text-align: center; padding: 72px 0 40px; }
+  .hero-badge {
+    display: inline-block; font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--gold); border: 1px solid rgba(245,200,66,.45); border-radius: 999px;
+    padding: 7px 18px; margin-bottom: 26px; background: rgba(245,200,66,.06);
+  }
+  h1 {
+    font-size: clamp(34px, 5.5vw, 58px); font-weight: 800; line-height: 1.15;
+    background: linear-gradient(100deg, #ffffff 20%, var(--violet) 60%, var(--gold));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+  }
+  .hero p.sub { color: var(--muted); font-size: clamp(16px, 2.4vw, 19px); max-width: 640px; margin: 0 auto 8px; }
+  .hero p.sub strong { color: var(--text); }
+
+  .divider { width: 90px; height: 3px; margin: 34px auto 0; border-radius: 3px;
+    background: linear-gradient(90deg, var(--purple), var(--gold)); }
+
+  .section-label { text-align: center; margin: 56px 0 30px; }
+  .section-label h2 { font-size: clamp(22px, 3.4vw, 30px); font-weight: 750; }
+  .section-label p { color: var(--muted); font-size: 15px; margin-top: 6px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 26px; padding-bottom: 30px; }
+
+  .card {
+    background: linear-gradient(160deg, var(--card), #120826);
+    border: 1px solid rgba(176,106,255,.22);
+    border-radius: 20px; padding: 30px 28px; position: relative; overflow: hidden;
+    display: flex; flex-direction: column; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .card:hover { transform: translateY(-5px); border-color: rgba(245,200,66,.55);
+    box-shadow: 0 18px 44px rgba(123,47,255,.28); }
+  .card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+    background: linear-gradient(90deg, var(--purple), var(--pink), var(--gold));
+  }
+  .tag { align-self: flex-start; font-size: 12px; letter-spacing: 1.6px; text-transform: uppercase;
+    color: var(--gold); background: rgba(245,200,66,.09); border: 1px solid rgba(245,200,66,.35);
+    border-radius: 999px; padding: 5px 13px; margin-bottom: 18px; }
+  .card h3 { font-size: 21px; font-weight: 750; line-height: 1.3; margin-bottom: 4px; }
+  .card h4 { font-size: 15px; font-weight: 600; color: var(--violet); margin-bottom: 14px; font-style: italic; }
+  .card p { color: var(--muted); font-size: 15.5px; flex-grow: 1; }
+  .btn {
+    display: inline-block; margin-top: 22px; text-align: center; text-decoration: none;
+    background: linear-gradient(100deg, var(--purple), var(--pink));
+    color: #fff; font-weight: 700; font-size: 15.5px; letter-spacing: .3px;
+    padding: 13px 26px; border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(123,47,255,.4); transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(224,64,251,.5); }
+  .btn.gold { background: linear-gradient(100deg, var(--gold), #ffdf7e); color: #2a1a00; box-shadow: 0 8px 24px rgba(245,200,66,.35); }
+  .btn.gold:hover { box-shadow: 0 12px 30px rgba(245,200,66,.5); }
+
+  .card.soon { border-style: dashed; opacity: .9; }
+  .soon-list { margin-top: 14px; }
+  .soon-list div { font-size: 14.5px; color: var(--muted); padding: 4px 0; display: flex; gap: 9px; align-items: baseline; }
+  .soon-list div::before { content: "◆"; color: var(--gold); font-size: 9px; }
+
+  .about { margin: 46px 0 0; background: rgba(123,47,255,.07); border: 1px solid rgba(176,106,255,.2);
+    border-radius: 20px; padding: 34px 30px; }
+  .about p { color: var(--muted); font-size: 15.5px; max-width: 760px; }
+  .about p strong { color: var(--gold); }
+
+  footer { text-align: center; padding: 52px 0 40px; color: var(--muted); font-size: 14px; }
+  footer .fline { width: 60px; height: 2px; margin: 0 auto 22px; background: linear-gradient(90deg, var(--purple), var(--gold)); border-radius: 2px; }
+  footer a { color: var(--violet); text-decoration: none; }
+  footer a:hover { color: var(--gold); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="brandbar">
+      <div class="logo">
+        <div class="logo-mark">M</div>
+        <div class="logo-name">MJ ESSENTIALS <span>DIGITAL STORE</span></div>
+      </div>
+      <a class="toplink" href="https://www.mjunlimitedessentialmktg.com">mjunlimitedessentialmktg.com</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-badge">Books · Guides · Digital Tools</div>
+    <h1>Everything You Need,<br>One Trusted Store</h1>
+    <p class="sub">Hey! Welcome to the <strong>MJ Essentials Digital Store</strong>, the one home for every digital product I create. From ministry books to business tools, each product is built to help you grow with <strong>clarity, structure, and purpose</strong>.</p>
+    <div class="divider"></div>
+  </section>
+
+  <section class="section-label">
+    <h2>Shop the Collection</h2>
+    <p>New products are added here as they release, so check back often.</p>
+  </section>
+
+  <!-- ==================== PRODUCT GRID ====================
+       To add a new product: copy a <div class="card"> block below,
+       change the tag, title, description, and set the Buy button
+       href to the product's Gumroad link.
+  ========================================================= -->
+  <section class="grid">
+
+    <!-- PRODUCT 1: The Book -->
+    <div class="card">
+      <div class="tag">Ministry &amp; Faith</div>
+      <h3>Never Forget Your Assignment</h3>
+      <h4>Returning to the Altar When Busy Is Not the Same as Aligned</h4>
+      <p>Being busy is not the same as being aligned. This book walks you back to the altar, helps you realign with the assignment God placed on your life, and gives you practical steps to live and lead on purpose.</p>
+      <a class="btn" href="https://mjessentials.gumroad.com/l/xyqvfi" target="_blank" rel="noopener">Get Your Copy</a>
+    </div>
+
+    <!-- PRODUCT 2: Placeholder for future products -->
+    <div class="card soon">
+      <div class="tag">Coming Soon</div>
+      <h3>More Digital Products</h3>
+      <h4>Guides · Templates · Tools</h4>
+      <p>New resources are on the way, created with the same heart: practical, purposeful, and built to help you move forward. Everything I release will live right here in one place.</p>
+      <div class="soon-list">
+        <div>Faith and leadership resources</div>
+        <div>Business and AI guides</div>
+        <div>Templates and digital tools</div>
+      </div>
+    </div>
+
+  </section>
+  <!-- ================== END PRODUCT GRID ================== -->
+
+  <section class="about">
+    <p><strong>About the store.</strong> MJ Essentials is part of MJUnlimited Essential Marketing Co., a ThinkBox AI Operation Systems, led by Mona Jackson-Ham. Every product here reflects the same mission: helping entrepreneurs, educators, ministries, and leaders grow with smart systems and unlimited purpose. It's only up from here!</p>
+  </section>
+
+  <footer>
+    <div class="fline"></div>
+    MJUnlimited Essential Mktg Co., a ThinkBox AI Operation Systems<br>
+    <a href="https://www.mjunlimitedessentialmktg.com">www.mjunlimitedessentialmktg.com</a> · Waldorf, MD
+  </footer>
+
+</div>
+</body>
+</html>
